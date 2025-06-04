@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香醇咖啡屋 - 品味生活每一刻</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f9f5f0;
+            color: #4a3c30;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .coffee-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .coffee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #8b5a2b;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-coffee text-2xl text-brown-800 mr-2"></i>
+                <span class="text-xl font-bold text-brown-800">香醇咖啡屋</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-brown-800 font-medium">首页</a>
+                <a href="#about" class="nav-link text-brown-800 font-medium">关于我们</a>
+                <a href="#products" class="nav-link text-brown-800 font-medium">咖啡豆</a>
+                <a href="#gallery" class="nav-link text-brown-800 font-medium">店内环境</a>
+                <a href="#contact" class="nav-link text-brown-800 font-medium">联系我们</a>
+            </div>
+            
+            <button id="mobileMenuButton" class="md:hidden text-brown-800">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-white">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="py-2 text-brown-800 font-medium">首页</a>
+                <a href="#about" class="py-2 text-brown-800 font-medium">关于我们</a>
+                <a href="#products" class="py-2 text-brown-800 font-medium">咖啡豆</a>
+                <a href="#gallery" class="py-2 text-brown-800 font-medium">店内环境</a>
+                <a href="#contact" class="py-2 text-brown-800 font-medium">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页 -->
+    <section id="home" class="hero-section min-h-screen flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">品味生活每一刻</h1>
+            <p class="text-xl md:text-2xl mb-8">精选全球优质咖啡豆，为您带来独特的咖啡体验</p>
+            <a href="#products" class="inline-block bg-brown-800 hover:bg-brown-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                探索我们的咖啡豆
+            </a>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-brown-800">关于香醇咖啡屋</h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="" alt="咖啡师冲泡咖啡" class="rounded-lg shadow-lg w-full">
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4 text-brown-700">我们的故事</h3>
+                    <p class="text-gray-700 mb-4">香醇咖啡屋成立于2015年，由一群热爱咖啡的年轻人创立。我们致力于寻找全球最优质的咖啡豆，并通过精湛的烘焙技术，将每一颗咖啡豆的风味发挥到极致。</p>
+                    <p class="text-gray-700 mb-6">我们的咖啡师都经过专业培训，能够为您提供最专业的咖啡建议和最美味的咖啡饮品。</p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-brown-50 p-4 rounded-lg">
+                            <i class="fas fa-globe-americas text-brown-800 text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-brown-800">全球精选</h4>
+                            <p class="text-sm text-gray-600">来自15个国家的优质咖啡豆</p>
+                        </div>
+                        <div class="bg-brown-50 p-4 rounded-lg">
+                            <i class="fas fa-fire text-brown-800 text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-brown-800">手工烘焙</h4>
+                            <p class="text-sm text-gray-600">小批量手工烘焙保证品质</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 咖啡豆产品 -->
+    <section id="products" class="py-16 bg-brown-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-brown-800">我们的咖啡豆</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 咖啡豆1 -->
+                <div class="coffee-card bg-white rounded-lg overflow-hidden">
+                    <img src="" alt="耶加雪菲咖啡豆" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-brown-800">埃塞俄比亚 耶加雪菲</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="text-sm text-gray-600">产地: 埃塞俄比亚</span>
+                            <span class="mx-2 text-gray-300">|</span>
+                            <span class="text-sm text-gray-600">品种: 阿拉比卡</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">明亮的柑橘酸度，茉莉花香，蜂蜜般的甜感，余韵悠长。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-brown-800">¥128/200g</span>
+                            <a href="javascript:void(0)" onclick="showProductDetail('埃塞俄比亚 耶加雪菲')" class="bg-brown-800 hover:bg-brown-700 text-white py-2 px-4 rounded-full text-sm transition duration-300">
+                                购买
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 咖啡豆2 -->
+                <div class="coffee-card bg-white rounded-lg overflow-hidden">
+                    <img src="" alt="哥伦比亚咖啡豆" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-brown-800">哥伦比亚 苏普莫</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="text-sm text-gray-600">产地: 哥伦比亚</span>
+                            <span class="mx-2 text-gray-300">|</span>
+                            <span class="text-sm text-gray-600">品种: 卡杜拉</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">均衡的口感，坚果巧克力风味，带有焦糖甜感，醇厚度高。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-brown-800">¥98/200g</span>
+                            <a href="javascript:void(0)" onclick="showProductDetail('哥伦比亚 苏普莫')" class="bg-brown-800 hover:bg-brown-700 text-white py-2 px-4 rounded-full text-sm transition duration-300">
+                                购买
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 咖啡豆3 -->
+                <div class="coffee-card bg-white rounded-lg overflow-hidden">
+                    <img src="https://s.coze.cn/t/xM9OfPhEgEM/" alt="曼特宁咖啡豆" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-brown-800">印尼 曼特宁</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="text-sm text-gray-600">产地: 印尼</span>
+                            <span class="mx-2 text-gray-300">|</span>
+                            <span class="text-sm text-gray-600">品种: 铁皮卡</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">醇厚浓郁，低酸度，带有草本香料和黑巧克力风味。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-brown-800">¥108/200g</span>
+                            <a href="javascript:void(0)" onclick="showProductDetail('印尼 曼特宁')" class="bg-brown-800 hover:bg-brown-700 text-white py-2 px-4 rounded-full text-sm transition duration-300">
+                                购买
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#all-products" class="inline-block border-2 border-brown-800 text-brown-800 hover:bg-brown-800 hover:text-white font-bold py-2 px-8 rounded-full transition duration-300">
+                    查看全部咖啡豆
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 店内环境 -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-brown-800">店内环境</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://s.coze.cn/t/-aO6uOTDBqE/" alt="咖啡店吧台" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="" alt="咖啡店座位区" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="" alt="拿铁艺术" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="" alt="咖啡店外景" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="" alt="烘焙区" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="" alt="阅读区" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-16 bg-brown-800 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">联系我们</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">店铺信息</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <p>北京市朝阳区建国路88号SOHO现代城A座1层</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <p>010-88889999</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <p>contact@xiangchuncoffee.com</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock mr-3"></i>
+                            <p>周一至周日: 8:00 - 22:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4">关注我们</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-brown-700 hover:bg-brown-600 flex items-center justify-center transition duration-300">
+                                <i class="fab fa-weixin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-brown-700 hover:bg-brown-600 flex items-center justify-center transition duration-300">
+                                <i class="fab fa-weibo"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-brown-700 hover:bg-brown-600 flex items-center justify-center transition duration-300">
+                                <i class="fab fa-douyin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-brown-700 hover:bg-brown-600 flex items-center justify-center transition duration-300">
+                                <i class="fab fa-xiaohongshu"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">留言咨询</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="您的姓名" class="w-full px-4 py-2 rounded bg-brown-700 border border-brown-600 focus:outline-none focus:ring-2 focus:ring-brown-500">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="电子邮箱" class="w-full px-4 py-2 rounded bg-brown-700 border border-brown-600 focus:outline-none focus:ring-2 focus:ring-brown-500">
+                        </div>
+                        <div>
+                            <input type="tel" placeholder="联系电话" class="w-full px-4 py-2 rounded bg-brown-700 border border-brown-600 focus:outline-none focus:ring-2 focus:ring-brown-500">
+                        </div>
+                        <div>
+                            <textarea placeholder="您的留言" rows="4" class="w-full px-4 py-2 rounded bg-brown-700 border border-brown-600 focus:outline-none focus:ring-2 focus:ring-brown-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-white hover:bg-gray-100 text-brown-800 font-bold py-2 px-6 rounded-full transition duration-300">
+                            发送留言
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-brown-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-coffee text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">香醇咖啡屋</span>
+                    </div>
+                    <p class="text-sm text-brown-400 mt-2">© 2024 香醇咖啡屋 版权所有</p>
+                </div>
+                
+                <div class="text-sm text-brown-400 text-center md:text-right">
+                    <p>页面内容均由 AI 生成，仅供参考</p>
+                    <p>created by <a href="https://space.coze.cn" class="underline hover:text-brown-300">coze space</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 产品详情模态框 -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg max-w-2xl w-full mx-4 overflow-hidden">
+            <div class="flex justify-between items-center border-b p-4">
+                <h3 id="modalTitle" class="text-xl font-bold text-brown-800">产品详情</h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/2">
+                        <img id="modalImage" src="" alt="咖啡豆" class="w-full rounded-lg shadow">
+                    </div>
+                    
+                    <div class="md:w-1/2">
+                        <h4 id="productName" class="text-xl font-bold mb-2 text-brown-800"></h4>
+                        <div class="flex items-center mb-4">
+                            <span id="productOrigin" class="text-sm text-gray-600 mr-3"></span>
+                            <span id="productVariety" class="text-sm text-gray-600"></span>
+                        </div>
+                        <p id="productDescription" class="text-gray-700 mb-4"></p>
+                        <p id="productPrice" class="text-2xl font-bold text-brown-800 mb-6"></p>
+                        
+                        <div class="mb-6">
+                            <h5 class="font-semibold mb-2 text-brown-800">购买方式</h5>
+                            <div class="flex flex-col space-y-3">
+                                <button class="bg-brown-800 hover:bg-brown-700 text-white py-2 px-4 rounded-full transition duration-300 flex items-center justify-center">
+                                    <i class="fas fa-store mr-2"></i> 到店购买
+                                </button>
+                                <a href="https://taobao.com" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-full transition duration-300 flex items-center justify-center">
+                                    <i class="fas fa-shopping-cart mr-2"></i> 淘宝购买
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="border-t pt-4">
+                            <h5 class="font-semibold mb-2 text-brown-800">配送信息</h5>
+                            <p class="text-sm text-gray-600">全国包邮，下单后1-3个工作日内发货</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t p-4 flex justify-end">
+                <button onclick="closeModal()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-6 rounded-full transition duration-300">
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 如果是移动端菜单，点击后关闭菜单
+                    if (document.getElementById('mobileMenu').classList.contains('active')) {
+                        document.getElementById('mobileMenu').classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // 产品详情模态框
+        function showProductDetail(productName) {
+            // 根据产品名称设置不同的详情
+            let productData = {};
+            
+            switch(productName) {
+                case '埃塞俄比亚 耶加雪菲':
+                    productData = {
+                        image: '',
+                        origin: '产地: 埃塞俄比亚',
+                        variety: '品种: 阿拉比卡',
+                        description: '耶加雪菲是埃塞俄比亚最著名的咖啡产区之一，以其独特的花香和柑橘风味闻名。我们的耶加雪菲采用水洗处理法，呈现出明亮的柑橘酸度，茉莉花香，蜂蜜般的甜感，余韵悠长。',
+                        price: '¥128/200g'
+                    };
+                    break;
+                case '哥伦比亚 苏普莫':
+                    productData = {
+                        image: '',
+                        origin: '产地: 哥伦比亚',
+                        variety: '品种: 卡杜拉',
+                        description: '来自哥伦比亚苏普莫产区的优质咖啡豆，采用传统日晒处理法。口感均衡，带有坚果巧克力风味和焦糖甜感，醇厚度高，适合喜欢浓郁口感的咖啡爱好者。',
+                        price: '¥98/200g'
+                    };
+                    break;
+                case '印尼 曼特宁':
+                    productData = {
+                        image: 'https://s.coze.cn/t/VyAuYWWZYQk/',
+                        origin: '产地: 印尼',
+                        variety: '品种: 铁皮卡',
+                        description: '来自印尼苏门答腊的曼特宁咖啡，采用半水洗处理法。醇厚浓郁，低酸度，带有草本香料和黑巧克力风味，是意式浓缩咖啡的理想选择。',
+                        price: '¥108/200g'
+                    };
+                    break;
+                default:
+                    productData = {
+                        image: '',
+                        origin: '',
+                        variety: '',
+                        description: '',
+                        price: ''
+                    };
+            }
+            
+            // 设置模态框内容
+            document.getElementById('modalTitle').textContent = productName;
+            document.getElementById('productName').textContent = productName;
+            document.getElementById('modalImage').src = productData.image;
+            document.getElementById('productOrigin').textContent = productData.origin;
+            document.getElementById('productVariety').textContent = productData.variety;
+            document.getElementById('productDescription').textContent = productData.description;
+            document.getElementById('productPrice').textContent = productData.price;
+            
+            // 显示模态框
+            document.getElementById('productModal').classList.remove('hidden');
+        }
+        
+        function closeModal() {
+            document.getElementById('productModal').classList.add('hidden');
+        }
+        
+        // 点击模态框外部关闭
+        document.getElementById('productModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
